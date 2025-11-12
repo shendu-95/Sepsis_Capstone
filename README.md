@@ -63,13 +63,13 @@ The final XGBoost model (trained on all 1.2M+ rows) was the clear winner.
 
 | ROC Curve (Ranking Power) | Precision-Recall Curve (Finding Rare Cases) |
 | :---: | :---: |
-| ![ROC Curve](images/final_roc_comparison.png) | ![PR Curve](images/final_prc_comparison.png) |
+| ![ROC Curve](assets/final_roc_comparison.png) | ![PR Curve](assets/final_prc_comparison.png) |
 
 ### Finding 3: The Real-World Trade-Off
 
 This confusion matrix shows the model's performance at its optimal F1-score threshold:
 
-![Confusion Matrix](images/final_confusion_matrix.png)
+![Confusion Matrix](assets/final_confusion_matrix.png)
 
 * **True Positives: 561** (Sepsis cases correctly found 6 hours early)
 * **False Negatives: 940** (Sepsis cases missed)
@@ -81,7 +81,7 @@ This gives a **Recall of 37.4%** (finding over a third of all cases) but a **Pre
 
 The model is not a "black box." A SHAP analysis shows *why* it makes its predictions.
 
-![SHAP Summary](images/final_shap_summary.png)
+![SHAP Summary](assets/final_shap_summary.png)
 
 The #1 most important feature is **`HCO3_max_12hr`** (Bicarbonate), followed by **`Chloride_max_12hr`**. This is a powerful clinical insight. The model independently learned that **metabolic acidosis** (which is what these lab values indicate) is the single biggest predictor of sepsis.
 
