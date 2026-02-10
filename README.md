@@ -41,7 +41,7 @@ This project follows a complete data science pipeline:
 
 ---
 
-## 📈 Results & Key Findings
+## Results & Key Findings
 
 ### Finding 1: The "Needle-in-a-Haystack" Problem
 
@@ -87,7 +87,7 @@ The #1 most important feature is **`HCO3_max_12hr`** (Bicarbonate), followed by 
 
 ---
 
-## 🧪 Additional Experiments (What Didn't Work)
+## Additional Experiments (What Didn't Work)
 
 To confirm the winning model, I ran two experiments to try and fix the low AUPRC score. **Both failed**, proving that my original approach was the most robust.
 
@@ -101,7 +101,7 @@ To confirm the winning model, I ran two experiments to try and fix the low AUPRC
 
 ---
 
-## 💡 Limitations & Future Work
+## Limitations & Future Work
 
 * **Computational Limits:** The 1.2M+ row dataset is extremely memory-intensive. `RandomizedSearchCV` would hang with `n_jobs > 1`, forcing a "sample-then-retrain" strategy. This also made **LSTMs** (a more complex time-series model) unfeasible, as they are even more computationally taxing.
 * **Data Limits:** The **0.48% positive rate** is the single biggest hurdle to achieving a high AUPRC score. The model would be dramatically better if trained on a dataset with more positive examples.
